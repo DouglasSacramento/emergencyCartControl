@@ -17,7 +17,7 @@ export const ContainerHeader = styled.div`
   background-color: var(--primary-color);
 
   h1 {
-    color: var(--white-color);
+    color: #fff;
     font-size: 3.2rem;
 
     @media (max-width: 760px) {
@@ -40,7 +40,8 @@ export const ContainerHeader = styled.div`
 export const ContainerMain = styled.div`
   width: 90rem;
   max-width: 90%;
-  margin: 4rem auto;
+  margin: 0 auto;
+  overflow: hidden;
 `;
 
 export const HeaderMain = styled.div`
@@ -90,7 +91,8 @@ export const ContainerCardMain = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   column-gap: 2rem;
-  margin: 15rem 0;
+  margin: 16rem 0 6rem;
+  overflow: hidden;
 `;
 
 export const CardStyle = styled.div`
@@ -163,13 +165,13 @@ export const ContainerFooter = styled.div`
     bottom: 0%;
     left: 50%;
     width: 100%;
-    height: 1.4rem;
+    height: 5rem;
 
-    background-color: var(--black-color);
+    background-color: var(--primary-color);
     transform: translateX(-50%);
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 1rem;
     z-index: 999;
-    color: #777;
+    color: var(--white-color);
   }
 `;

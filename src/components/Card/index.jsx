@@ -3,14 +3,6 @@ import { ptBR } from "date-fns/locale";
 import { CardStyle, ContainerCardMain } from "../../styles";
 
 export default function Card({ medications }) {
-  if (medications.length < 1) {
-    return (
-      <div style={{ overflow: "hidden" }}>
-        <h1 id="emptyCart">Nenhum item cadastrado</h1>
-      </div>
-    );
-  }
-
   const sortedMedications = [...medications].sort((a, b) =>
     compareAsc(parseISO(a.validade), parseISO(b.validade))
   );
