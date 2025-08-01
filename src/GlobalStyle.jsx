@@ -25,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
     overflow-y: overlay;
     overflow-x: hidden;
+    background-color: #F7F7F7
 
     #emptyCart {
       color: #ad3939;

@@ -105,11 +105,11 @@ export const CardStyle = styled.div`
   margin-bottom: 2rem;
   border: solid;
   background-color: transparent;
-  box-shadow: 0.5rem 0.5rem 1rem #00000060;
+  box-shadow: 0.5rem 0.5rem .8rem #00000060;
   transition: linear 0.1s;
 
   &:hover {
-    box-shadow: 0.5rem 0.5rem 1rem #000000;
+    box-shadow: 0.5rem 0.5rem .8rem #000000;
     transform: scale(1.01);
     cursor: default;
   }
