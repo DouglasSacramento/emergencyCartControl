@@ -64,10 +64,6 @@ export const HeaderMain = styled.div`
     background-color: transparent;
     border: none;
     font-size: 1.8rem;
-
-    @media (max-width: 760px) {
-      font-size: 1.4rem;
-    }
   }
 
   #show,
@@ -92,6 +88,10 @@ export const HeaderMain = styled.div`
     &:hover {
       transform: scale(1.03);
       color: #333;
+    }
+
+    @media (max-width: 760px) {
+      font-size: 1.2rem;
     }
   }
 `;
