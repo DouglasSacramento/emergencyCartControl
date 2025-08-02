@@ -26,9 +26,6 @@ export default function Main() {
   return (
     <ContainerMain>
       <HeaderMain>
-        <button onClick={() => setShowAll(!showAll)}>
-          <h4 id="show">{showAll ? "Esconder todos" : "Mostrar todos"}</h4>
-        </button>
         <button
           onClick={() =>
             window.open(
@@ -38,6 +35,9 @@ export default function Main() {
           }
         >
           <h4 id="insert">Novo medicamento</h4>
+        </button>
+        <button onClick={() => setShowAll(!showAll)}>
+          <h4 id="show">{showAll ? "Esconder todos" : "Mostrar todos"}</h4>
         </button>
       </HeaderMain>
       {showAll && <Card medications={medications} />}

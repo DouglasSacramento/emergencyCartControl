@@ -24,16 +24,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-size: 1.6rem;
     overflow-y: overlay;
-    overflow-x: hidden;
-
-    #emptyCart {
-      color: #ad3939;
-      text-align: center;
-      margin-top: 16rem;
-
-      @media (max-width: 760px) {
-      font-size: 2.5rem;
-      }
-    }
+    overflow-x: hidden;   
+    background-color: #f4f4f4 ;
   }  
 `;

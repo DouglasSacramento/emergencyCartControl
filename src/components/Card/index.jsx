@@ -57,9 +57,11 @@ export default function Card({ medications }) {
               </p>
               <p>
                 <strong>Retirado por:</strong>
-                {medication.retirado === null
-                  ? " Está no armário"
-                  : " " + medication.retirado}
+                <span>
+                  {medication.retirado === null
+                    ? " Está no armário"
+                    : " " + medication.retirado}
+                </span>
               </p>
               <p>
                 <strong>Data:</strong> {formattedIssuedTo}
