@@ -47,7 +47,10 @@ export default function Card({ medications }) {
                 <p>
                   Status{" "}
                   <span>
-                    {medication.retirado === null ? "- Armário" : "- Carrinho"}
+                    {medication.retirado === null ||
+                    medication.armario !== false
+                      ? "- Armário"
+                      : "- Carrinho"}
                   </span>
                 </p>
               </h5>
@@ -65,11 +68,12 @@ export default function Card({ medications }) {
                 {medication.quantidade.toString().padStart(2, "0")}
               </p>
               <p>
-                {medication.retirado !== null && (
-                  <>
-                    <strong>Entregue:</strong> {medication.retirado}
-                  </>
-                )}
+                {medication.retirado !== null &&
+                  medication.armario === false && (
+                    <>
+                      <strong>Entregue:</strong> {medication.retirado}
+                    </>
+                  )}
               </p>
 
               <p>
