@@ -124,9 +124,7 @@ export const CardStyle = styled.div`
   }
 
   border-width: ${(props) =>
-    props.$status === "expired" || props.$status === "monthExpired"
-      ? "0.2rem"
-      : "0.1rem"};
+    props.$status === "expired" ? "0.2rem" : "0.1rem"};
 
   border-color: ${(props) =>
     props.$status === "expired"
