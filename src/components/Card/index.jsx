@@ -45,9 +45,9 @@ export default function Card({ medications }) {
               <h4>{medication.nome}</h4>
               <h5>
                 <p>
-                  Status -{" "}
+                  Status{" "}
                   <span>
-                    {medication.retirado === null ? "Armário" : "Carrinho"}
+                    {medication.retirado === null ? "- Armário" : "- Carrinho"}
                   </span>
                 </p>
               </h5>
