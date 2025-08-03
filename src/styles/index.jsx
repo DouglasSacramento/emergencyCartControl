@@ -7,7 +7,7 @@ export const Container = styled.div`
 
 export const ContainerHeader = styled.div`
   width: 100%;
-  height: 10.5rem;
+  height: 12rem;
   position: fixed;
   top: 0;
 
@@ -23,7 +23,7 @@ export const ContainerHeader = styled.div`
     font-size: 3.2rem;
 
     @media (max-width: 760px) {
-      font-size: 2.4rem;
+      font-size: 2.8rem;
     }
   }
 
@@ -44,10 +44,10 @@ export const ContainerMain = styled.div`
 
 export const HeaderMain = styled.div`
   position: fixed;
-  top: 8rem;
+  top: 10rem;
   left: 50%;
   width: 100%;
-  height: 8rem;
+  height: 5rem;
   transform: translate(-50%);
 
   background-color: white;
@@ -100,7 +100,7 @@ export const ContainerCardMain = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 18rem 0 6rem;
+  margin: 17rem 0 5rem;
   padding-top: 1rem;
   overflow: hidden;
 `;
@@ -111,7 +111,7 @@ export const CardStyle = styled.div`
   width: 28rem;
   padding: 2rem;
   border-radius: 0.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   border: solid;
   background-color: transparent;
   box-shadow: 0.5rem 0.5rem 1rem #00000040;
@@ -139,13 +139,27 @@ export const CardStyle = styled.div`
     text-align: center;
     text-transform: uppercase;
     word-wrap: break-word;
-    margin-bottom: 0.8rem;
     color: ${(props) =>
       props.$status === "expired"
         ? "#cb0e0e"
         : props.$status === "monthExpired"
         ? "#f5c400"
         : "var(--primary-color)"};
+  }
+
+  h5 {
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: solid 0.1rem #00000030;
+    padding: 0.5rem 0 1rem;
+  }
+
+  h5 p {
+    font-weight: 800;
+  }
+
+  h5 p span {
+    font-weight: 500;
   }
 
   #expiredDate,
@@ -163,15 +177,6 @@ export const CardStyle = styled.div`
 
   p + p {
     margin-top: 0.3rem;
-  }
-
-  p span {
-    color: #a10000;
-    font-weight: 700;
-  }
-
-  #amount {
-    margin-bottom: 0.8rem;
   }
 
   strong {

@@ -3,7 +3,6 @@ import Card from "../Card";
 import { ContainerMain, HeaderMain } from "../../styles";
 
 export default function Main() {
-  const [showAll, setShowAll] = useState(true);
   const [medications, setMedications] = useState([]);
 
   useEffect(() => {
@@ -36,11 +35,8 @@ export default function Main() {
         >
           <h4 id="insert">Novo medicamento</h4>
         </button>
-        <button onClick={() => setShowAll(!showAll)}>
-          <h4 id="show">{showAll ? "Esconder todos" : "Mostrar todos"}</h4>
-        </button>
       </HeaderMain>
-      {showAll && <Card medications={medications} />}
+      <Card medications={medications} />
     </ContainerMain>
   );
 }

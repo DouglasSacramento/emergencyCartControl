@@ -43,6 +43,14 @@ export default function Card({ medications }) {
               key={index}
             >
               <h4>{medication.nome}</h4>
+              <h5>
+                <p>
+                  Status -{" "}
+                  <span>
+                    {medication.retirado === null ? "Armário" : "Carrinho"}
+                  </span>
+                </p>
+              </h5>
 
               <p id="lot">
                 <strong>Lote: </strong>
@@ -53,18 +61,19 @@ export default function Card({ medications }) {
                 {formattedExpiration}
               </p>
               <p id="amount">
-                <strong>Quantidade:</strong> {medication.quantidade}
+                <strong>Quantidade:</strong>{" "}
+                {medication.quantidade.toString().padStart(2, "0")}
               </p>
               <p>
-                <strong>Retirado por:</strong>
-                <span>
-                  {medication.retirado === null
-                    ? " Está no armário"
-                    : " " + medication.retirado}
-                </span>
+                {medication.retirado !== null && (
+                  <>
+                    <strong>Entregue:</strong> {medication.retirado}
+                  </>
+                )}
               </p>
+
               <p>
-                <strong>Data:</strong> {formattedIssuedTo}
+                <strong>Registrado:</strong> {formattedIssuedTo}
               </p>
             </CardStyle>
           );
