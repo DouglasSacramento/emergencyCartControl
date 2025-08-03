@@ -45,7 +45,7 @@ export default function Card({ medications }) {
               <h4>{medication.nome}</h4>
               <h5>
                 <p>
-                  Status{" "}
+                  Local{" "}
                   <span>
                     {medication.retirado === null ||
                     medication.armario !== false
