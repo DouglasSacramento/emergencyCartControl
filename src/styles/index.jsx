@@ -153,11 +153,13 @@ export const CardStyle = styled.div`
   }
 
   h5 p {
-    font-weight: 800;
+    font-weight: 600;
+    color: #14d114;
   }
 
   h5 p span {
     font-weight: 500;
+    color: #333;
   }
 
   #expiredDate,
