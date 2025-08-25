@@ -9,10 +9,9 @@ export default function Main() {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          "https://glowing-addition-929431b399.strapiapp.com/api/medicamentos"
+          "https://directus.douglassacramento.com.br/items/medications"
         );
         const data = await res.json();
-
         setMedications(data.data);
       } catch (error) {
         console.error("Erro ao buscar os dados:", error);
@@ -27,10 +26,7 @@ export default function Main() {
       <HeaderMain>
         <button
           onClick={() =>
-            window.open(
-              "https://glowing-addition-929431b399.strapiapp.com/admin/auth/login",
-              "_blank"
-            )
+            window.open("https://directus.douglassacramento.com.br", "_blank")
           }
         >
           <h4 id="insert">Novo medicamento</h4>

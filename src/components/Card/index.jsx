@@ -11,7 +11,7 @@ export default function Card({ medications }) {
     <>
       <ContainerCardMain>
         {sortedMedications.map((medication, index) => {
-          const createdDate = medication.createdAt;
+          const createdDate = medication.date_created;
           const formattedIssuedTo = format(
             parseISO(createdDate),
             "dd/MMM/yyyy",
@@ -36,50 +36,52 @@ export default function Card({ medications }) {
           const isThisMonth = sameMonth && !isExpired;
 
           return (
-            <CardStyle
-              $status={
-                isExpired ? "expired" : isThisMonth ? "monthExpired" : "valid"
-              }
-              key={index}
-            >
-              <h4>{medication.nome}</h4>
-              <h5>
-                <p>
-                  Local{" "}
-                  <span>
-                    {medication.retirado === null ||
-                    medication.armario !== false
-                      ? "- Armário"
-                      : "- Carrinho"}
-                  </span>
+            medication.status === "published" && (
+              <CardStyle
+                $status={
+                  isExpired ? "expired" : isThisMonth ? "monthExpired" : "valid"
+                }
+                key={index}
+              >
+                <h4>{medication.nome}</h4>
+                <h5>
+                  <p>
+                    Local{" "}
+                    <span>
+                      {medication.retirado === null ||
+                      medication.armario !== false
+                        ? "- Armário"
+                        : "- Carrinho"}
+                    </span>
+                  </p>
+                </h5>
+
+                <p id="lot">
+                  <strong>Lote: </strong>
+                  {medication.lote}
                 </p>
-              </h5>
+                <p id="expiredDate">
+                  <strong>Validade: </strong>
+                  {formattedExpiration}
+                </p>
+                <p id="amount">
+                  <strong>Quantidade:</strong>{" "}
+                  {medication.quantidade.toString().padStart(2, "0")}
+                </p>
+                <p>
+                  {medication.retirado !== null &&
+                    medication.armario === false && (
+                      <>
+                        <strong>Entregue:</strong> {medication.retirado}
+                      </>
+                    )}
+                </p>
 
-              <p id="lot">
-                <strong>Lote: </strong>
-                {medication.lote}
-              </p>
-              <p id="expiredDate">
-                <strong>Validade: </strong>
-                {formattedExpiration}
-              </p>
-              <p id="amount">
-                <strong>Quantidade:</strong>{" "}
-                {medication.quantidade.toString().padStart(2, "0")}
-              </p>
-              <p>
-                {medication.retirado !== null &&
-                  medication.armario === false && (
-                    <>
-                      <strong>Entregue:</strong> {medication.retirado}
-                    </>
-                  )}
-              </p>
-
-              <p>
-                <strong>Registrado:</strong> {formattedIssuedTo}
-              </p>
-            </CardStyle>
+                <p>
+                  <strong>Registrado:</strong> {formattedIssuedTo}
+                </p>
+              </CardStyle>
+            )
           );
         })}
       </ContainerCardMain>
