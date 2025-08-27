@@ -56,30 +56,32 @@ export default function Card({ medications }) {
                   </p>
                 </h5>
 
-                <p id="lot">
-                  <strong>Lote: </strong>
-                  {medication.lote}
-                </p>
-                <p id="expiredDate">
-                  <strong>Validade: </strong>
-                  {formattedExpiration}
-                </p>
-                <p id="amount">
-                  <strong>Quantidade:</strong>{" "}
-                  {medication.quantidade.toString().padStart(2, "0")}
-                </p>
-                <p>
-                  {medication.retirado !== null &&
-                    medication.armario === false && (
-                      <>
-                        <strong>Entregue:</strong> {medication.retirado}
-                      </>
-                    )}
-                </p>
+                <div className="content-card">
+                  <p id="lot">
+                    <strong>Lote: </strong>
+                    {medication.lote}
+                  </p>
+                  <p id="expiredDate">
+                    <strong>Validade: </strong>
+                    {formattedExpiration}
+                  </p>
+                  <p id="amount">
+                    <strong>Quantidade:</strong>{" "}
+                    {medication.quantidade.toString().padStart(2, "0")}
+                  </p>
+                  <p>
+                    {medication.retirado !== null &&
+                      medication.armario === false && (
+                        <>
+                          <strong>Entregue:</strong> {medication.retirado}
+                        </>
+                      )}
+                  </p>
 
-                <p>
-                  <strong>Registrado:</strong> {formattedIssuedTo}
-                </p>
+                  <p>
+                    <strong>Registrado:</strong> {formattedIssuedTo}
+                  </p>
+                </div>
               </CardStyle>
             )
           );

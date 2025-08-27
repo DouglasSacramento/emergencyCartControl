@@ -36,7 +36,7 @@ export const ContainerHeader = styled.div`
 `;
 
 export const ContainerMain = styled.div`
-  width: 50rem;
+  width: 100%;
   max-width: 90%;
   margin: 0 auto;
   overflow: hidden;
@@ -51,7 +51,6 @@ export const HeaderMain = styled.div`
   transform: translate(-50%);
 
   background-color: white;
-
   border-radius: 0.5rem;
   box-shadow: 2px 2px 4px hsla(0, 0%, 0%, 0.6);
 
@@ -73,7 +72,8 @@ export const HeaderMain = styled.div`
   }
 
   #insert {
-    color: #999;
+    font-size: 1.8rem;
+    color: #666;
   }
 
   #insert:hover {
@@ -89,33 +89,55 @@ export const HeaderMain = styled.div`
       transform: scale(1.03);
       color: #333;
     }
+  }
 
-    @media (max-width: 760px) {
-      font-size: 1.2rem;
+  @media (max-width: 760px) {
+    #insert {
+      font-size: 1.6rem;
     }
   }
 `;
 
 export const ContainerCardMain = styled.div`
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
   margin: 17rem 0 5rem;
-  padding-top: 1rem;
   overflow: hidden;
 `;
 
 export const CardStyle = styled.div`
   display: grid;
   place-content: center;
-  width: 28rem;
   padding: 2rem;
+  width: 28rem;
   border-radius: 0.5rem;
   margin-bottom: 3rem;
   border: solid;
   background-color: transparent;
   box-shadow: 0.5rem 0.5rem 1rem #00000040;
   transition: linear 0.1s;
+
+  @media (min-width: 760px) {
+    width: 40rem;
+    height: 25rem;
+
+    h4 {
+      font-size: 2.4rem;
+    }
+
+    h5 p {
+      font-size: 1.8rem;
+    }
+
+    .content-card {
+      p {
+        font-size: 1.6rem;
+      }
+    }
+  }
 
   &:hover {
     box-shadow: 0.5rem 0.5rem 1rem #00000080;
